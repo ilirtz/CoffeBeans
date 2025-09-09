@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Coffee Beans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #5e3c0b;
+        }
+
+        .button {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #a0522d;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #deb887;
+            color: #000;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h1>☕ Coffee Beans Catalog</h1>
+
+    <h:form>
+        <h:commandButton value="🔄 Load Beans" action="#{coffeeBeanManager.loadBeans}" styleClass="button" />
+        <br/><br/>
+
+        <p><strong>Total Beans: #{coffeeBeanManager.beans.size()}</strong></p>
+
+        <h:dataTable value="#{coffeeBeanManager.beans}" var="b" border="1">
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{b.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Origin</f:facet>
+                #{b.origin}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Roast</f:facet>
+                #{b.roastLevel}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Flavor</f:facet>
+                #{b.flavorNotes}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Price (€/kg)</f:facet>
+                #{b.pricePerKg}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
+    <div class="footer">
+        <h:link value="← Back to Home" outcome="index.xhtml" style="color:#5e3c0b; text-decoration:none;" />
+    </div>
+</h:body>
+</html>

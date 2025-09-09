@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Order Coffee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf8f5;
+            padding: 30px;
+            color: #333;
+        }
+
+        h1 {
+            color: #5e3c0b;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #a0522d;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h1>🛒 Place Your Coffee Order</h1>
+
+    <h:form>
+        <div class="form-group">
+            <label for="coffeeName">Coffee Name:</label><br/>
+            <h:inputText id="coffeeName" value="#{orderBean.coffeeName}" required="true" />
+        </div>
+
+        <div class="form-group">
+            <label for="pricePerKg">Price per Kg (€):</label><br/>
+            <h:inputText id="pricePerKg" value="#{orderBean.pricePerKg}" required="true" />
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity (Kg):</label><br/>
+            <h:inputText id="quantity" value="#{orderBean.quantityKg}" required="true" />
+        </div>
+
+        <h:commandButton value="✅ Place Order" action="#{orderBean.placeOrder}" styleClass="button" />
+    </h:form>
+
+    <div class="result">
+        <h:outputText rendered="#{orderBean.total > 0}" 
+                      value="Order placed! Total: €#{orderBean.total}" />
+    </div>
+
+    <br/>
+    <h:link value="← Back to Home" outcome="index.xhtml" />
+</h:body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Test Coffee Beans</title>
+</h:head>
+<h:body>
+    <h1>Test: Load Dummy Coffee Beans</h1>
+
+    <h:form>
+        <h:commandButton value="Load Dummy Beans" action="#{testBean.loadBeans}" />
+        <br/><br/>
+
+        <p>Status: #{testBean.status}</p>
+
+        <h:dataTable value="#{testBean.coffees}" var="coffee" border="1">
+            <h:column>
+                #{coffee}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
+    <br/>
+    <h:link value="← Back to Home" outcome="index.xhtml" />
+</h:body>
+</html>

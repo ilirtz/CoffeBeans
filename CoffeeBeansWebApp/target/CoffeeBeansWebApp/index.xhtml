@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Welcome to Coffee Beans Web App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fef9f4;
+            color: #4b3e2e;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5e3c0b;
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 16px;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .nav-button:hover {
+            background-color: #a0522d;
+        }
+    </style>
+</h:head>
+<h:body>
+    <h1>☕ Coffee Beans Web App</h1>
+
+    <p>Manage, view, and explore premium coffee beans from around the world.</p>
+
+    <h:link outcome="beans.xhtml" styleClass="nav-button" value="📋 View Beans" />
+    <h:link outcome="add.xhtml" styleClass="nav-button" value="➕ Add New Bean" />
+    <h:link outcome="contact.xhtml" styleClass="nav-button" value="📞 Contact Us" />
+    <h:link outcome="order.xhtml" styleClass="nav-button" value="💳 Place Order" />
+
+</h:body>
+</html>
