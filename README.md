@@ -6,11 +6,11 @@ This Java web application allows users to manage and explore premium coffee bean
 
 🚀 Features
 
-✅ View coffee beans from a Derby database
-✅ Add new coffee bean entries
-✅ Contact page (static content)
-✅ Simulated order & payment form
-✅ Modern UI with basic CSS styling
+ View coffee beans from a Derby database
+ Add new coffee bean entries
+ Contact page (static content)
+ Simulated order & payment form
+ Modern UI with basic CSS styling
 
 
 
@@ -53,11 +53,10 @@ beans.xml enables CDI for @Named beans.
 
 loadBeans() retrieves live data from the Derby database.
 
-📸 Optional Screenshots
-Add interface screenshots here if required by your coursework.
+
 
 👤 Author
-Student Name: [Ilir Tzaferai]
-Project: CoffeeBeansWebApp
-University  / Course / Module: [London Metropolitan / Computer Science / CS5003 Data Structures and Specialist Programming]
-Date: May 2025
+Ilir Tzaferai
+CoffeeBeansWebApp
+London Metropolitan / Computer Science / CS5003 Data Structures and Specialist Programming
+May 2025
